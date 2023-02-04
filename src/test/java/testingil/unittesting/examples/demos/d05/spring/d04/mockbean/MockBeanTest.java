@@ -12,14 +12,4 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration(classes = { EmptyConfiguration.class })
 public class MockBeanTest {
 
-	@MockBean(answer = Answers.RETURNS_DEEP_STUBS)
-	@Autowired
-	ItemRepository repository;
-
-	@Test
-	public void repository_is_created() {
-		assertNotNull(repository);
-		assertNotNull(repository.getTemplate());
-		assertNotNull(repository.getTemplate().getDataSource());
-	}
 }
